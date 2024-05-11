@@ -33,7 +33,7 @@ jobs:
       - name: Running
         run: |
           echo ${{inputs.project}}
-          echo ${[inputs.project-path}}
+          echo ${{inputs.project-path}}
       # - name: Setup PHP
       #   uses: shivammathur/setup-php@v2
       #   with:
