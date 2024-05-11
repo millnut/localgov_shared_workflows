@@ -1,0 +1,12 @@
+name: Test localgovdrupal drupal-module
+
+on:
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Echo a message
+        run: echo Hello World!
