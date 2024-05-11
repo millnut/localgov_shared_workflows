@@ -1,0 +1,6 @@
+{
+    "name": "Test workflow",
+    "description": "Simple example workflow",
+    "iconName": "example-icon",
+    "categories": ["Example"]
+}
