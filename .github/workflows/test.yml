@@ -31,8 +31,9 @@ jobs:
 
     steps:
       - name: Running
-        run: echo $ $
-        run: echo $project $project_path
+        run: |
+          echo $ $
+          echo $project $project_path
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
