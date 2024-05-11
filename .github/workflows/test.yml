@@ -59,7 +59,7 @@ jobs:
           if [ -z $LATEST_RELEASE ]; then LATEST_RELEASE=1; fi
           echo "LATEST_RELEASE=${LATEST_RELEASE}" >> $GITHUB_ENV
           echo $LATEST_RELEASE
-          echo GITHUB_REPOSITORY
+          echo $GITHUB_REPOSITORY
 
       # - name: Cached workspace
       #   uses: actions/cache@v2
