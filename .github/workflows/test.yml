@@ -91,7 +91,7 @@ jobs:
       - name: Obtain the test target using Composer
         if: env.HEAD_USER == 'localgovdrupal'
         run: |
-          composer --working-dir=html config repositories.1 vcs git@github.com:${{inputs.project}}.git
+          composer --working-dir=html config repositories.1 vcs git@github.com:millnut/localgov_alert_banner.git
           composer global config github-oauth.github.com ${{ github.token }}
           composer --working-dir=./html require --with-all-dependencies ${{inputs.project}}:"${COMPOSER_REF} as ${LATEST_RELEASE}"
 
@@ -103,3 +103,8 @@ jobs:
 
       - name: Obtain suggested dependencies
         run: composer --working-dir=./html/${{inputs.project_path}} suggests --list | xargs composer --working-dir=./html require
+
+  phpcs:
+    name: Coding Standards checks
+    needs: build
+    runs-on: ubuntu-latest
