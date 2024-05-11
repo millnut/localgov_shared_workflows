@@ -5,8 +5,23 @@ on:
 
 jobs:
   build:
+    name: Install LocalGov Drupal
     runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        localgov-version:
+          - '3.x'
+        drupal-version:
+          - '~10.0'
+        php-version:
+          - '8.1'
+          - '8.2'
+          - '8.3'
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Echo a message
-        run: echo Hello World!
+       - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
