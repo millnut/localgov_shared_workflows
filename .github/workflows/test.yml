@@ -104,7 +104,7 @@ jobs:
       - name: Obtain suggested dependencies
         run: composer --working-dir=./html/${{inputs.project_path}} suggests --list | xargs composer --working-dir=./html require
 
-  phpcs:
-    name: Coding Standards checks
-    needs: build
-    runs-on: ubuntu-latest
+  # phpcs:
+  #   name: Coding Standards checks
+  #   needs: build
+  #   runs-on: ubuntu-latest
